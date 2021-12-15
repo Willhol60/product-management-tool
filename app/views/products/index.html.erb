@@ -1,1 +1,25 @@
-<h1>All my products</h1>
+<div class="container">
+  <h1>All my products</h1>
+
+  <%= link_to 'Add a product',  new_product_path %>
+
+  <table>
+    <tr>
+      <th>Product name</th>
+      <th>Size</th>
+      <th>Prices</th>
+    </tr>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.size %></td>
+        <% product.prices.each do |price| %>
+          <td><%= price.currency %> <%= price.value %></td>
+        <% end %>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Delete', product_path(product), method: :delete, remote: true %></td>
+      </tr>
+    <% end %>
+
+  </table>
+</div>
