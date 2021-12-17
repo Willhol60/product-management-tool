@@ -1,23 +1,21 @@
-<div class="container">
-  <h1>All my products</h1>
+<div class="container py-4">
+  <div style='margin:16px'>
+    <h1 style='color:darkslategrey; text-decoration:underline; margin-bottom:48px'>All my products</h1>
 
-  <%= link_to 'Add a product',  new_product_path %>
+    <%= link_to 'Add a product',  new_product_path, class: 'default-button' %>
+  </div>
 
-  <table>
+  <table class="mt-4">
     <tr>
       <th>Product name</th>
       <th>Size</th>
-      <th>Prices</th>
     </tr>
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
         <td><%= product.size %></td>
-        <% product.prices.each do |price| %>
-          <td><%= price.currency %> <%= price.value %></td>
-        <% end %>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Delete', product_path(product), method: :delete, remote: true %></td>
+        <td class="edit-column"><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td class="edit-column"><%= link_to 'Delete', product_path(product), method: :delete, remote: true %></td>
       </tr>
     <% end %>
 

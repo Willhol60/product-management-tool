@@ -1,15 +1,29 @@
 table {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
+  margin: 16px;
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 1px solid black;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(192, 179, 179);
+}
+
+.edit-column {
+  width: 10%;
+  text-align: center;
+  color: darkslategray;
+}
+
+.edit-column:hover {
+  color: black;
 }
